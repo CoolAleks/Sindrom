@@ -10,9 +10,22 @@ public class SindromService {
     public long findMax(long[] incomes) {
         long current_max_index = 0;
         long current_max = incomes[0];
-        for (long income : incomes)
-            if (current_max < income)
+        for (long income : incomes) {
+            if (current_max <= income)
                 current_max = income;
+            current_max_index++;
+        }
         return current_max;
+    }
+
+    public long findMin(long[] incomes) {
+        long current_min_index = 0;
+        long current_min = incomes[0];
+        for (long income : incomes) {
+            if (current_min > income)
+                current_min = income;
+            current_min_index++;
+        }
+        return current_min;
     }
 }
